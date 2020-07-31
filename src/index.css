@@ -24,6 +24,13 @@ a {
   color: inherit;
 }
 
+/* Reset página, footer fica lá em baixo */
+#root {
+  min-height: calc(100vh - var(--bodyPaddingTop));
+  display: flex;
+  flex-direction: column;
+}
+
 /*
 font-family: 'Press Start 2P', cursive;
 font-family: 'Roboto', sans-serif; */
