@@ -1,0 +1,16 @@
+{
+    "categorias": [
+        {          
+            "id": 1,
+            "nome": "Front-End",
+            "descricao": "Uma categirua",
+            "cor": "#cdv1ff"
+        },
+        {          
+            "id": 2,
+            "nome": "Front-End",
+            "descricao": "Outra cate",
+            "cor": "#cdv1ff"
+        }
+    ]
+}

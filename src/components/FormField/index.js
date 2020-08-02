@@ -46,7 +46,7 @@ const Input = styled.input`
   border-top: 4px solid transparent;
   border-bottom: 4px solid #53585D;
   
-  padding: 16px 16px;
+  padding: 16px;
   margin-bottom: 45px;
   
   resize: none;
@@ -56,6 +56,7 @@ const Input = styled.input`
   &:focus {
     border-bottom-color: var(--primary);
   }
+  /* focus span, quando type não for color -> :not([type='color'])*/
   &:focus:not([type='color']) + ${Label.Text} {
     transform: scale(.6) translateY(-10px);
   }
