@@ -1,29 +1,33 @@
 import React, { useState } from 'react';
-import PageDefault from '../../../components/PageDefault';
 import { Link } from 'react-router-dom';
+import Button from '../../../components/Button';
+import PageDefault from '../../../components/PageDefault';
+import FormField from '../../../components/FormField';
 
 function CadastroCategoria() {
-  const [categorias, setCategorias] = useState(['Teste']);
-
   const valoresIniciais = {
-    nome: 'Categoria Inicial',
-    descricao: 'Descrição inicial',
-    cor: '#000',
-  }
-  //abrindo o array -> console.log(nomeDaCategoria) -> array [nome, função]
+    nome: '',
+    descricao: '',
+    cor: '',
+  };
+  const [categorias, setCategorias] = useState([]);
   const [values, setValues] = useState(valoresIniciais);
 
+  // abrindo o array -> console.log(nomeDaCategoria) -> array [nome, função]
+
   function setValue(chave, valor) {
+    // chave: nome, descricao, bla, bli
     setValues({
       ...values,
-      [chave]: valor, //nome: ''/valor
-    })
+      [chave]: valor, // nome: 'valor'
+    });
   }
 
-  function handlerChange(infosDoEvento) {
+  function handleChange(infosDoEvento) {
     setValue(
       infosDoEvento.target.getAttribute('name'),
-      infosDoEvento.target.value);
+      infosDoEvento.target.value,
+    );
   }
 
   return (
@@ -34,59 +38,77 @@ function CadastroCategoria() {
         infosDoEvento.preventDefault();
         setCategorias([
           ...categorias,
-          values
+          values,
         ]);
 
-      }}>
-        {/*State, altera componente dinamicamente sem refresh na página, contador por exemplo */}
-        <div>
-          <label>Nome da Categoria:
-        <input type="text" value={values.nome}
-              name="nome"
-              onChange={handlerChange} />
-          </label>
-        </div>
+        setValues(valoresIniciais);
+      }}
+      >
 
-        <div>
-          <label>Descrição:
-        <textarea type="text"
+        <FormField
+          label="Nome da Categoria"
+          type="text"
+          name="nome"
+          value={values.nome}
+          onChange={handleChange}
+        />
+
+        <FormField
+          label="Descrição:"
+          type="textarea"
+          name="descricao"
+          value={values.descricao}
+          onChange={handleChange}
+        />
+
+        {/* <div>
+          <label>
+            Descrição:
+            <textarea
+              type="text"
               value={values.descricao}
               name="descricao"
-              onChange={handlerChange}
+              onChange={handleChange}
             />
           </label>
-        </div>
+        </div> */}
 
-        <div>
-          <label>Cor:
-        <input type="color"
+        <FormField
+          label="Cor"
+          type="color"
+          name="cor"
+          value={values.cor}
+          onChange={handleChange}
+        />
+        {/* <div>
+          <label>
+            Cor:
+            <input
+              type="color"
               value={values.cor}
-              name="color"
-              onChange={handlerChange}
+              name="cor"
+              onChange={handleChange}
             />
           </label>
-        </div>
+        </div> */}
 
-        <button>
+        <Button>
           Cadastrar
-        </button>
+        </Button>
       </form>
 
       <ul>
-        {categorias.map((categoria, indice) => {
-          return (
-            <li key={`${categoria}${indice}`}>
-              {categoria.nome}
-            </li>
-          )
-        })}
+        {categorias.map((categoria, indice) => (
+          <li key={`${categoria}${indice}`}>
+            {categoria.nome}
+          </li>
+        ))}
       </ul>
 
       <Link to="/">
         Ir para home
       </Link>
-    </PageDefault >
-
+    </PageDefault>
   );
 }
 
