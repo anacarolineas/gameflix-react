@@ -4,18 +4,12 @@ import Button from '../../../components/Button';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 
-function CadastroCategoria() {
-  const valoresIniciais = {
-    nome: '',
-    descricao: '',
-    cor: '',
-  };
-  const [categorias, setCategorias] = useState([]);
+//custom hook
+function useForm(valoresIniciais) {
   const [values, setValues] = useState(valoresIniciais);
 
   // abrindo o array -> console.log(nomeDaCategoria) -> array [nome, função]
-
-  function setValue(chave, valor) {
+   function setValue(chave, valor) {
     // chave: nome, descricao, bla, bli
     setValues({
       ...values,
@@ -30,8 +24,31 @@ function CadastroCategoria() {
     );
   }
 
+  function clearForm() {
+    setValues(valoresIniciais)
+  }
+
+  return {
+    values,
+    handleChange,
+    clearForm
+  };
+} 
+
+function CadastroCategoria() {
+  const valoresIniciais = {
+    nome: '',
+    descricao: '',
+    cor: '',
+  };
+  
+const { handleChange, values, clearForm } = useForm(valoresIniciais);
+const [categorias, setCategorias] = useState([]);
+
   useEffect(() => {
-    const URL_TOP = 'http://localhost:8080/categorias';
+    const URL_TOP = window.location.hostname.includes('localhost')
+    ? 'http://localhost:8080/categorias' 
+    : 'https://gameflix-react.herokuapp.com/categorias';
     fetch(URL_TOP).then(async (respostaDoServidor) => {
       const resposta = await respostaDoServidor.json();
       setTimeout(() => {
@@ -55,7 +72,7 @@ function CadastroCategoria() {
           values,
         ]);
 
-        setValues(valoresIniciais);
+        clearForm(valoresIniciais);
       }}
       >
 
