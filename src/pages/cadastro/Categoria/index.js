@@ -3,37 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from '../../../components/Button';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
-
-//custom hook
-function useForm(valoresIniciais) {
-  const [values, setValues] = useState(valoresIniciais);
-
-  // abrindo o array -> console.log(nomeDaCategoria) -> array [nome, função]
-   function setValue(chave, valor) {
-    // chave: nome, descricao, bla, bli
-    setValues({
-      ...values,
-      [chave]: valor, // nome: 'valor'
-    });
-  }
-
-  function handleChange(infosDoEvento) {
-    setValue(
-      infosDoEvento.target.getAttribute('name'),
-      infosDoEvento.target.value,
-    );
-  }
-
-  function clearForm() {
-    setValues(valoresIniciais)
-  }
-
-  return {
-    values,
-    handleChange,
-    clearForm
-  };
-} 
+import useForm from '../../../hooks/useForm';
 
 function CadastroCategoria() {
   const valoresIniciais = {
@@ -113,7 +83,7 @@ const [categorias, setCategorias] = useState([]);
       <ul>
         {categorias.map((categoria, indice) => (
           <li key={`${categoria}${indice}`}>
-            {categoria.nome}
+            {categoria.titulo}
           </li>
         ))}
       </ul>
