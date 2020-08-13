@@ -5,39 +5,39 @@
       "titulo": "Trailer",
       "cor": "#6BD1FF",
       "link_extra": {
-        "text": "Formação de Front End na Alura",
-        "url": "https://www.alura.com.br/cursos-online-front-end"
+        "text": "Trailers Lançamentos",
+        "url": "https://www.youtube.com/watch?v=W2Wnvvj33Wo"
       }
     },
     {
       "id": 2,
-      "titulo": "Back End",
+      "titulo": "Sony",
       "cor": "#00C86F",
       "link_extra": {
-        "text": "Cursos de Back End na Alura",
+        "text": "Sony",
         "url": "https://www.alura.com.br/cursos-online-programacao"
       }
     },
     {
       "id": 3,
-      "titulo": "Data Science e Inteligência Artificial",
+      "titulo": "Microsoft",
       "cor": "#9cd33b",
       "link_extra": {
-        "text": "Cursos de Data Science na Alura",
+        "text": "Microsoft",
         "url": "https://www.alura.com.br/cursos-online-mobile"
       }
     },
     {
       "id": 4,
-      "titulo": "Filmes",
+      "titulo": "Nintendo",
       "cor": "orange"
     },
     {
       "id": 5,
-      "titulo": "Games",
+      "titulo": "Análises",
       "cor": "red",
       "link_extra": {
-        "text": "Formação de Jogos na Alura",
+        "text": "Análises de Games",
         "url": "https://www.alura.com.br/cursos-online-front-end"
       }
     }
@@ -52,26 +52,26 @@
     {
       "id": 2,
       "categoriaId": 1,
-      "titulo": "O que faz uma desenvolvedora front-end? #HipstersPontoTube",
-      "url": "https://www.youtube.com/watch?v=ZY3-MFxVdEw"
+      "titulo": "The Last of US II",
+      "url": "https://www.youtube.com/watch?v=W2Wnvvj33Wo"
     },
     {
       "id": 3,
       "categoriaId": 1,
-      "titulo": "Componentização com VanillaJS #AluraMais",
-      "url": "https://www.youtube.com/watch?v=LatCKpcOMak"
+      "titulo": "Marvel’s Avengers: A-Day | Official Trailer E3 2019",
+      "url": "https://www.youtube.com/watch?v=LDBojdBAjXU"
     },
     {
       "id": 4,
       "categoriaId": 1,
-      "titulo": "Pare de chutar e aprenda a display: inline #01",
-      "url": "https://www.youtube.com/watch?v=5PS6ku8NzIE"
+      "titulo": "RESIDENT EVIL 8 Official Trailer (2021) Resident Evil Village Game HD",
+      "url": "https://www.youtube.com/watch?v=JSapXD9vxYA"
     },
     {
       "id": 5,
       "categoriaId": 1,
-      "titulo": "Template String: Interpolando strings com JavaScript #AluraMais",
-      "url": "https://www.youtube.com/watch?v=ORI_HTXaIw0"
+      "titulo": "Assassin's Creed Valhalla: Estreia Mundial do Trailer Cinemático",
+      "url": "https://www.youtube.com/watch?v=TUbgBVTD7VI"
     },
     {
       "id": 6,
